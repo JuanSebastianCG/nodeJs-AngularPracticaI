@@ -1,2 +1,5 @@
 <p>usuarios works!</p>
 <button name="Datos" (click)="buscar()">Consultar datos</button>
+<div *ngFor="let estructura of this.data">
+    <li>{{estructura.title}}</li>
+</div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RemotoService } from '../remoto.service';
+import { Ihtpp } from '../Ihttp';
+
 
 @Component({
   selector: 'app-usuarios',
@@ -8,6 +10,7 @@ import { RemotoService } from '../remoto.service';
 })
 export class UsuariosComponent implements OnInit {
 
+  public data = {} as Ihtpp[];
   constructor(private informacionweb:RemotoService) { }
 
   ngOnInit(): void {
@@ -15,7 +18,7 @@ export class UsuariosComponent implements OnInit {
   }
   /* llamado de la funcion de la clase remota */
   public buscar(){
-    this.informacionweb.getDatos();
+    this.informacionweb.getDatos().subscribe(data => { this.data=data });
   }
   
   

@@ -10,8 +10,8 @@ export class RemotoService {
   constructor(private datos : HttpClient) { }
   public getDatos(){
 
-    this.datos.get<Ihtpp[]>("http://jsonplaceholder.typicode.com/posts")
-      .subscribe(data => { console.log(data) });
-  
+    return this.datos.get<Ihtpp[]>("http://jsonplaceholder.typicode.com/posts");
+    /* .subscribe(data => { console.log(data) }); */
   }
+
 }
