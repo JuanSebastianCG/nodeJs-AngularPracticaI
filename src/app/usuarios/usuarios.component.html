@@ -1,5 +1,15 @@
-<p>usuarios works!</p>
-<button name="Datos" (click)="buscar()">Consultar datos</button>
-<div *ngFor="let estructura of this.data">
-    <li>{{estructura.title}}</li>
+<div class="Container">
+    <div>
+        <label for="idPokemon">ID Pokemon </label>
+
+        <input type="number" id="idPokemon" name="idPokemon" min="0" max="300">
+
+        <button name="Datos" (click)="buscar()">Consultar datos</button>
+    </div>
+
+    <div>
+        <div class="pokemonName">{{data.name}}</div>
+        <img src="{{data.sprites.other.dream_world.front_default}}">
+      
+    </div>
 </div>

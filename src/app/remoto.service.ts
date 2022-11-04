@@ -14,4 +14,9 @@ export class RemotoService {
     /* .subscribe(data => { console.log(data) }); */
   }
 
+  public getDataById(id : number){
+    return this.datos.get<Ihtpp>("https://pokeapi.co/api/v2/pokemon/"+id+"");
+
+  }
+
 }

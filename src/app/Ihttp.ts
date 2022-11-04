@@ -1,6 +1,17 @@
 export interface Ihtpp {
 
-"userId" : string; 
-"title" : string;
 
-}
+    "name": string;
+    "sprites": {
+        "other": {
+            "dream_world": {
+                "front_default": string;
+            };
+        };
+    };
+};
+
+
+
+
+/* ['sprites']['other']['dream_world']['front_default'] */

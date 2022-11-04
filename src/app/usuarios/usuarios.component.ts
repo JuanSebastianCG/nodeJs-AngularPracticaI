@@ -10,7 +10,7 @@ import { Ihtpp } from '../Ihttp';
 })
 export class UsuariosComponent implements OnInit {
 
-  public data = {} as Ihtpp[];
+  public data = {} as Ihtpp;
   constructor(private informacionweb:RemotoService) { }
 
   ngOnInit(): void {
@@ -18,9 +18,18 @@ export class UsuariosComponent implements OnInit {
   }
   /* llamado de la funcion de la clase remota */
   public buscar(){
-    this.informacionweb.getDatos().subscribe(data => { this.data=data });
+    let idPokemon = Number((<HTMLInputElement>document.getElementById("idPokemon")).value);
+    this.informacionweb.getDataById(idPokemon).subscribe(data => { 
+
+      this.data = data; 
+      console.log(this.data);
+    });
+
+  
+   // this.informacionweb.getDatos().subscribe(data => { this.data=data });
   }
+}
   
   
 
-}
+
